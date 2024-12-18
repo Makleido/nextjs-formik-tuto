@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./css/globals.css";
+import ThemeProvider from "./components/providers/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "NextJS Formik Tutorial",
@@ -14,7 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body
+        className={`antialiased w-full min-h-screen dark:bg-primary-dark-100 bg-primary-light-100 dark:text-primary-light-100 text-primary-dark-100`}
+      >
+        {children}
+        <ThemeProvider />
+      </body>
     </html>
   );
 }
