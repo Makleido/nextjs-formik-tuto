@@ -9,7 +9,7 @@ import { PropsWithChildren } from "react";
 interface Props extends PropsWithChildren {
   title: string;
   initialValues: CodeBlockObjectType;
-  validationSchema: ObjectSchema<any>;
+  validationSchema: ObjectSchema<object>;
 }
 
 export default function ObjectForm({
