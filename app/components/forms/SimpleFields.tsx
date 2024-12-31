@@ -6,6 +6,18 @@ import { ChangeEvent } from "react";
 import CustomInput from "./CustomInput";
 
 export default function SimpleFields() {
+  /**
+   * values, errors and touched are objects in the formik context wich can be used
+   * for showing and validating data
+   *
+   * setFieldTouched and setFieldValue is for setting some of these values, as
+   * the input field wont change its touched value and
+   * normal value by default in this case
+   *
+   * for automatic usage we would need to use formik fields
+   * which requires only names, but cant be used with normal react hooks
+   * https://formik.org/docs/api/useField
+   */
   const { values, errors, touched, setFieldTouched, setFieldValue } =
     useFormikContext<CodeBlockObjectType>();
 

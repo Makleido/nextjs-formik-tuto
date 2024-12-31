@@ -9,6 +9,12 @@ import { removeItemFromArrayByIndex } from "@/app/helpers/helpers";
 export default function SimpleList() {
   const { values, setFieldValue } = useFormikContext<CodeBlockObjectType>();
 
+  /**
+   * Removing and adding items in a formik attribute where we store
+   * an array of items can be done with spreading into a new array
+   * splice, and also different "newArray" like values
+   */
+
   const handleAddNew = () => {
     setFieldValue("descriptions", [
       ...((values?.descriptions as string[]) ?? []),

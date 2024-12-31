@@ -1,12 +1,15 @@
 "use client";
 
+import ComplexList from "./components/forms/ComplexList";
 import ObjectForm from "./components/forms/objectForm/ObjectForm";
 import SimpleFields from "./components/forms/SimpleFields";
 import SimpleList from "./components/forms/SimpleList";
 import {
+  complexListInitialValues,
   simpleInitialValues,
   simpleListInitialValues,
 } from "./constants/exampleInitialValues";
+import { complexListValidator } from "./validators/complexListValidator";
 import { simpleListValidator } from "./validators/simpleListValidator";
 import { simpleValidator } from "./validators/simpleValidator";
 
@@ -23,6 +26,9 @@ export default function Home() {
         <div className="grid grid-cols-10 gap-4 mt-10 items-start">
           <div className={`col-span-2 ${backgrounds}`}></div>
           <div className={`col-span-6`}>
+            {/* 
+              This contains only some fields that can be changed
+            */}
             <ObjectForm
               title="Simple form with basic values"
               initialValues={simpleInitialValues}
@@ -30,13 +36,25 @@ export default function Home() {
             >
               <SimpleFields />
             </ObjectForm>
-
+            {/* 
+              This contains an array of strings that can be modified
+            */}
             <ObjectForm
               title="Simple form with an array of string"
               initialValues={simpleListInitialValues}
               validationSchema={simpleListValidator}
             >
               <SimpleList />
+            </ObjectForm>
+            {/* 
+              This contains an array of complex objects that can be modified
+            */}
+            <ObjectForm
+              title="Complex form containing multiple fields in an array of objects"
+              initialValues={complexListInitialValues}
+              validationSchema={complexListValidator}
+            >
+              <ComplexList />
             </ObjectForm>
           </div>
           <div className={`col-span-2 ${backgrounds}`}></div>

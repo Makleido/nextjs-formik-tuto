@@ -6,6 +6,10 @@ import { useFormikContext } from "formik";
 import { CodeBlockObjectType } from "@/app/types/codeBlockObject";
 
 export default function ObjectFields({ children }: PropsWithChildren) {
+  /**
+   * formik context usage, we also can create contexts and use like this, its easier to access data
+   * for now here we only get the values as its the "initialValues" data, and is the changed data
+   */
   const { values } = useFormikContext<CodeBlockObjectType>();
 
   return (

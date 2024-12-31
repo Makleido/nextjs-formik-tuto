@@ -15,6 +15,12 @@ export default function SimpleListItem({ index, handleRemove }: Props) {
   const { values, setFieldValue } = useFormikContext<CodeBlockObjectType>();
 
   const handleFieldChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    /**
+     * if we are using arrays, then in setFieldValue we need to add
+     * the proper name of the value, for example this is a simple
+     * string array, so we need the name of the array attribute,
+     * and the index of the string element to set it with a new value
+     */
     setFieldValue(`descriptions[${index}]`, evt.target.value);
   };
 
