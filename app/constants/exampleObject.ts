@@ -6,11 +6,13 @@ export const exampleObject: CodeBlockObjectType = {
   description: "example object",
   properties: ["example property 1", "example property 2"],
   numbers: [1, 4, 3],
+  isAccepted: false,
   complexData: [
     {
       id: 1,
       name: "complex 1",
       properties: ["example property 1", "example property 2"],
+      isAccepted: false,
     },
     {
       id: 1,

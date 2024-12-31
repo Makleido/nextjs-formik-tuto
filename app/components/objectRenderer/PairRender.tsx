@@ -17,7 +17,11 @@ export default function PairRender({ pair, index }: Props) {
           </var>
           {": "}
           <span className="dark:text-highlight-dark-100 text-highlight-light-100">
-            {pair.value as string | number}
+            {typeof pair.value === "boolean"
+              ? pair.value
+                ? "true"
+                : "false"
+              : (pair.value as string | number)}
           </span>
         </span>
       ) : (

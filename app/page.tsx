@@ -1,5 +1,4 @@
-import CodeBlock from "./components/objectRenderer/CodeBlock";
-import { exampleObject } from "./constants/exampleObject";
+import SimpleObjectForm from "./components/forms/simpleObjectForm/SimpleObjectForm";
 
 const backgrounds =
   "dark:bg-primary-light-100 bg-primary-dark-100 dark:bg-opacity-25 bg-opacity-50 w-full";
@@ -14,7 +13,7 @@ export default function Home() {
         <div className="grid grid-cols-10 gap-4 mt-10 items-start">
           <div className={`col-span-2 ${backgrounds}`}></div>
           <div className={`col-span-6`}>
-            <CodeBlock data={exampleObject} />
+            <SimpleObjectForm />
           </div>
           <div className={`col-span-2 ${backgrounds}`}></div>
         </div>

@@ -1,4 +1,4 @@
-export type CodeBlockObjectNormalValueType = string | number | object;
+export type CodeBlockObjectNormalValueType = string | number | boolean | object;
 export type CodeBlockObjectArrayValueType = CodeBlockObjectNormalValueType[];
 export type CodeBlockObjectValueType =
   | CodeBlockObjectNormalValueType
