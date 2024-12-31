@@ -39,3 +39,16 @@ export function getKeyValueItems(
     value: data[key],
   }));
 }
+
+export function removeItemFromArrayByIndex(
+  array: CodeBlockObjectValueType[],
+  index: number
+) {
+  const newArray: CodeBlockObjectValueType[] = [];
+  array.map((item, itemIndex) => {
+    if (itemIndex !== index) {
+      newArray.push(item);
+    }
+  });
+  return newArray;
+}
