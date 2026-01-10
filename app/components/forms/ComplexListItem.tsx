@@ -62,7 +62,7 @@ export default function ComplexListItem({ index, handleRemove }: Props) {
     const errorValues = errors?.complexData
       ? ((errors as CodeBlockObjectType).complexData as CodeBlockObjectType[])
       : null;
-    if (errorValues && errorValues[index][name]) {
+    if (errorValues && errorValues?.[index]?.[name]) {
       return errorValues[index][name];
     }
     return null;
@@ -97,8 +97,8 @@ export default function ComplexListItem({ index, handleRemove }: Props) {
         error={getIsTouched("age") ? `${getError("age") ?? ""}` : undefined}
       />
       <CustomInput
-        label="Description"
-        name={`${index}-description`}
+        label="Checkbox"
+        name={`${index}-isAccepted`}
         checked={
           ((values?.complexData as CodeBlockObjectType[])[index]
             ?.isAccepted as boolean) ?? false
